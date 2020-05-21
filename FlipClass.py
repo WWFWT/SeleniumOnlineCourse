@@ -61,8 +61,8 @@ if __name__ == "__main__":
     print("登陆完成")
 
     time.sleep(5)
-    print("进入在线学堂")
-    browser.find_element_by_xpath("//a[@class='header-enter-school fl']").click()
+    print("进入我的学堂")
+    browser.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/ul/li[3]/a").click()
 
     time.sleep(5)
     print("获取所有课程")
@@ -85,7 +85,7 @@ if __name__ == "__main__":
     allList = browser.find_elements_by_xpath("//a[contains(@onclick,openStudySource)]")
 
     for i in allList:
-        if i.get_attribute('onclick')!=None and '.mp4' in i.text:
+        if i.get_attribute('onclick')!=None and ('.wmv' in i.text or '.mp4' in i.text):
             videoList.append(i.get_attribute('onclick'))
 
     for count,s in enumerate(videoList):

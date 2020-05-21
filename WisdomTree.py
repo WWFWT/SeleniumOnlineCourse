@@ -90,8 +90,8 @@ if __name__ == '__main__':
         LogIn(school,classNum,passWord)
 
         time.sleep(5)
-        print("进入在线学堂")
-        browser.find_element_by_xpath("//a[@class='header-enter-school fl']").click()
+        print("进入我的学堂")
+        browser.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/ul/li[3]/a").click()
 
         time.sleep(5)
         print("获取所有课程")
